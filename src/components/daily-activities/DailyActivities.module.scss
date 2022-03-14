@@ -1,0 +1,24 @@
+.daily_activities_container {
+  background-color: var(--tertiary-color);
+  width: 60vw;
+  h2 {
+    font-size: 1.6rem;
+    margin-left: 3rem;
+    padding-top: 3rem;
+  }
+}
+
+.tooltip_container {
+  background-color: var(--primary-color);
+  height: 6rem;
+  font-size: 1.6rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.daily_activities_legend {
+  height: 3rem;
+}
