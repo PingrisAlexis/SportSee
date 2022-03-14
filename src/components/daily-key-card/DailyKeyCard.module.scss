@@ -1,0 +1,35 @@
+.daily_key_card_container {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem;
+  position: relative;
+  bottom: 3rem;
+  background: var(--tertiary-color);
+  height: 10rem;
+  width: 30rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  img {
+    margin-left: 3rem;
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #020203;
+  }
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 3rem;
+    span {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      color: gray;
+      font-weight: lighter;
+    }
+  }
+}
