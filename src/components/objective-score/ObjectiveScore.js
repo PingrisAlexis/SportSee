@@ -1,35 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './ObjectiveScore.module.scss';
-import {RadialBarChart,PieChart,Pie, PolarAngleAxis, Cell,ResponsiveContainer, Label, RadialBar} from 'recharts';
+import {RadialBarChart, PolarAngleAxis, ResponsiveContainer, RadialBar} from 'recharts';
+import {Mock} from "../../services/mock";
 
-
-export const data = [
-    {
-        id: 12,
-        userInfos: {
-            firstName: 'Karl',
-            lastName: 'Dovineau',
-            age: 31,
-        },
-        todayScore: 0.2,
-        keyData: {
-            calorieCount: 1930,
-            proteinCount: 155,
-            carbohydrateCount: 290,
-            lipidCount: 50
-        }
-    }
-]
 
 const ObjectiveScore = () => {
-    const userScore =  data[0].todayScore
+    const [score, setscore] = useState("");
+
+    useEffect(() => {
+        (async () => {
+            const response  = await new Mock().getUser()
+            setscore(response[0].todayScore);
+        })();
+    }, []);
+
 
     const scoreValueScale = [{
-        value: userScore * 100
+        value: score * 100
     }]
-    const currentUserScore = userScore * 100
+    const currentUserScore = score * 100
 
-    return <div className={styles.objective_score_container}>
+    return <>
+             <div className={styles.objective_score_container}>
                 <h2>Score</h2>
                 <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart data={scoreValueScale}
@@ -65,6 +57,7 @@ const ObjectiveScore = () => {
                     </RadialBarChart>
                 </ResponsiveContainer>
             </div>
+    </>
 }
 
 export default ObjectiveScore;

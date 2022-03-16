@@ -1,0 +1,15 @@
+.welcome_container {
+  position: absolute;
+  bottom: 80rem;
+  h1 {
+    font-size: 6rem;
+    font-weight: lighter;
+    span {
+      color: var(--primary-color);
+    }
+  }
+  p {
+    font-size: 1.8rem;
+  }
+
+}
