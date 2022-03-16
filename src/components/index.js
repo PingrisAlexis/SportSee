@@ -5,3 +5,5 @@ export { default as AverageSessionDuration } from './average-session-duration/Av
 export { default as OverallPerformances } from './overall-performances/OverallPerformances';
 export { default as ObjectiveScore } from './objective-score/ObjectiveScore';
 export { default as DailyKeyCard } from './daily-key-card/DailyKeyCard';
+export { default as DailyKeyCardContainer } from './daily-key-card-container/DailyKeyCardContainer';
+export { default as Welcome } from './welcome/Welcome';
