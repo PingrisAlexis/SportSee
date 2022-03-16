@@ -3,12 +3,12 @@
   flex-direction: row;
   position: absolute;
   top: 30rem;
-  left: 15rem;
+  left: 20rem;
 }
 
 .user_profil_bottom_part {
-  padding-top: 1rem ;
+  margin-top: 12rem ;
   display: flex;
   flex-flow: row wrap;
-  flex-flow: row wrap;
+  justify-content: space-between;
 }

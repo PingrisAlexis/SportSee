@@ -3,8 +3,8 @@ import Logo from '../../assets/logo.png';
 import styles from "./Header.module.scss";
 
 const Header = () => {
-    return  <header className={styles.header_container}>
-            
+    return  <>
+            <header className={styles.header_container}>
                 <img src={Logo} />
                 <ul>
                     <li>
@@ -20,9 +20,7 @@ const Header = () => {
                         Communauté
                     </li>
                 </ul>
-
         </header>
-
-
+    </>
 }
-export default Header
+export default Header;
