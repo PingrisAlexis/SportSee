@@ -1,0 +1,26 @@
+.NotFound_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  h1, h2, .nav_link {
+    color: var(--primary-color)
+  }
+  h1 {
+    font-size: 25rem;
+    @media screen and (max-width: 400px) {
+      font-size: 18rem!important;
+    }
+  }
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .nav_link {
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-top: 10rem;
+  }
+}
