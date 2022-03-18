@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import styles from './AverageSessionDuration.module.scss'
 import { Tooltip, ResponsiveContainer, XAxis, YAxis,Line, LineChart } from 'recharts';
 import {Mock} from "../../services/mock";
+import {Api} from "../../services/api";
+import axios from "axios";
+
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -19,8 +22,8 @@ const AverageSessionDuration = () => {
 
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getAverageSessionDuration()
-            setAverages(response);
+            const result  = await new Api().getAverageSessionDuration();
+                setAverages(result);
         })();
     }, []);
 

@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './DailyKeyCard.module.scss';
-import {Mock} from "../../services/mock";
 
 const DailyKeyCard = (props) => {
     const {name, content, unity, icon} = props;

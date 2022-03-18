@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from './DailyActivities.module.scss'
 import {BarChart, Bar, CartesianGrid, Tooltip, ResponsiveContainer, XAxis, YAxis, Legend} from 'recharts';
-import {Mock} from "../../services/mock";
+import {Api} from "../../services/api";
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -20,8 +20,8 @@ const DailyActivities = () => {
 
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getDailyActivities()
-            setActivities(response);
+            const result  = await new Api().getDailyActivities()
+            setActivities(result);
         })();
     }, []);
 

@@ -68,7 +68,6 @@ export class Mock {
                  kilogram: 76,
                  calories: 390
              }
-
         ]
     }
     async getUser() {

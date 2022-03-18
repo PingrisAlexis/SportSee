@@ -6,14 +6,16 @@ import calorie from '../../assets/calorie.svg'
 import chicken from '../../assets/chicken.svg'
 import apple from '../../assets/apple.svg'
 import cheeseburger from '../../assets/cheeseburger.svg'
+import axios from "axios";
+import {Api} from "../../services/api";
 
 const DailyKeyCardContainer = () => {
     const [dailyKeyCards, setDailyKeyCards] = useState([]);
 
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getUser()
-            setDailyKeyCards(response[0].keyData);
+            const response  = await new Api().getUser()
+            setDailyKeyCards(response.keyData);
         })();
     }, []);
 

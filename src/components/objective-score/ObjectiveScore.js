@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './ObjectiveScore.module.scss';
 import {RadialBarChart, PolarAngleAxis, ResponsiveContainer, RadialBar} from 'recharts';
 import {Mock} from "../../services/mock";
+import {Api} from "../../services/api";
 
 
 const ObjectiveScore = () => {
@@ -9,8 +10,9 @@ const ObjectiveScore = () => {
 
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getUser()
-            setscore(response[0].todayScore);
+            const result  = await new Api().getUser()
+            setscore(result.todayScore);
+            console.log(result);
         })();
     }, []);
 
@@ -59,5 +61,4 @@ const ObjectiveScore = () => {
             </div>
     </>
 }
-
 export default ObjectiveScore;
