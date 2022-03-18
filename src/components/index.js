@@ -7,3 +7,4 @@ export { default as ObjectiveScore } from './objective-score/ObjectiveScore';
 export { default as DailyKeyCard } from './daily-key-card/DailyKeyCard';
 export { default as DailyKeyCardContainer } from './daily-key-card-container/DailyKeyCardContainer';
 export { default as Welcome } from './welcome/Welcome';
+export { default as NotFound } from './not-found/NotFound';

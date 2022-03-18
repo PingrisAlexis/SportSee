@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './OverallPerformances.module.scss';
-import {RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Radar, Legend} from 'recharts';
+import {RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Radar} from 'recharts';
 import {Mock} from "../../services/mock";
 
 const OverallPerformances = () => {

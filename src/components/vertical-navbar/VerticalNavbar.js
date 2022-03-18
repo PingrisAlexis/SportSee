@@ -30,5 +30,4 @@ const VerticalNavbar = () => {
                </div>
            </>
 }
-
 export default VerticalNavbar;
