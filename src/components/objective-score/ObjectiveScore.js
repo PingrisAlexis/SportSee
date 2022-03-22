@@ -1,21 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import styles from './ObjectiveScore.module.scss';
 import {RadialBarChart, PolarAngleAxis, ResponsiveContainer, RadialBar} from 'recharts';
-import {Mock} from "../../services/mock";
-import {Api} from "../../services/api";
+import {Api} from '../../services/api';
+import {useParams} from 'react-router-dom'
 
+/**
+ * @name ObjectiveScore
+ * @description This component will render the percentage of activities objective for a specific user.
+ * @returns {JSX.Element}
+ */
 
 const ObjectiveScore = () => {
-    const [score, setscore] = useState("");
+    const [score, setScore] = useState("");
+    const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-            const result  = await new Api().getUser()
-            setscore(result.todayScore);
-            console.log(result);
+            const response  = await new Api().getUser(id)
+            setScore(response.todayScore);
         })();
     }, []);
-
 
     const scoreValueScale = [{
         value: score * 100

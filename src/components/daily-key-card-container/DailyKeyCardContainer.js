@@ -1,20 +1,27 @@
 import React, {useEffect, useState} from 'react';
-import {DailyKeyCard} from "../index";
+import {DailyKeyCard} from '../index';
+import {Api} from '../../services/api';
+import {useParams} from 'react-router-dom';
 import styles from './DailyKeyCardContainer.module.scss';
-import {Mock} from "../../services/mock";
-import calorie from '../../assets/calorie.svg'
-import chicken from '../../assets/chicken.svg'
-import apple from '../../assets/apple.svg'
-import cheeseburger from '../../assets/cheeseburger.svg'
-import axios from "axios";
-import {Api} from "../../services/api";
+import calorie from '../../assets/calorie.svg';
+import chicken from '../../assets/chicken.svg';
+import apple from '../../assets/apple.svg';
+import cheeseburger from '../../assets/cheeseburger.svg';
+
+
+/**
+ * @name DailyKeyCardContainer
+ * @description This component is a container to the daily key cards for a specific user.
+ * @returns {JSX.Element}
+ */
 
 const DailyKeyCardContainer = () => {
     const [dailyKeyCards, setDailyKeyCards] = useState([]);
+    const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-            const response  = await new Api().getUser()
+            const response  = await new Api().getUser(id)
             setDailyKeyCards(response.keyData);
         })();
     }, []);

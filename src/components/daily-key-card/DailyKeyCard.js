@@ -1,6 +1,12 @@
 import React from 'react';
 import styles from './DailyKeyCard.module.scss';
 
+/**
+ * @name DailyKeyCard
+ * @description This component will render daily key cards.
+ * @returns {JSX.Element}
+ */
+
 const DailyKeyCard = (props) => {
     const {name, content, unity, icon} = props;
 
@@ -14,4 +20,4 @@ const DailyKeyCard = (props) => {
                 </figure>
     </>
 }
-export default DailyKeyCard
+export default DailyKeyCard;

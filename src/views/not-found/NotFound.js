@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './NotFound.module.scss';
 import {NavLink} from 'react-router-dom';
 
-export default class NotFound extends Component {
-    render() {
+/**
+ * @name NotFound
+ * @description This is the error 404 page.
+ * @returns {JSX.Element}
+ */
+
+const NotFound = () => {
+
         return (
             <main className={styles.NotFound_container}>
                 <h1>404</h1>
@@ -13,5 +19,5 @@ export default class NotFound extends Component {
                 </NavLink>
             </main>
         );
-    }
 }
+export default NotFound;

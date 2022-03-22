@@ -1,15 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import styles from './OverallPerformances.module.scss';
 import {RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Radar} from 'recharts';
-import {Mock} from "../../services/mock";
+import {Api} from '../../services/api';
+import {useParams} from 'react-router-dom';
+
+/**
+ * @name OverallPerformances
+ * @description This component will render the global performance for a specific user.
+ * (energy, cardio, endurance, strength, speed ans intensity)
+ * @returns {JSX.Element}
+ */
 
 const OverallPerformances = () => {
-    const [performances, setperformances] = useState([]);
+    const [performances, setPerformances] = useState([]);
+    const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getPerformances()
-            setperformances(response[0].data);
+            const response  = await new Api().getPerformances(id)
+            setPerformances(response);
         })();
     }, []);
 
@@ -22,7 +31,7 @@ const OverallPerformances = () => {
                         dataKey="subject"
                         tickSize={10}
                         tick={{
-                            fill: 'white',
+                            fill: "white",
                             fontSize: 10,
                             fontWeight: 500,
                             y: 200,

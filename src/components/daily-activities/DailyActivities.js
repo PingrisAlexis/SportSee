@@ -1,8 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import styles from './DailyActivities.module.scss'
+import styles from './DailyActivities.module.scss';
 import {BarChart, Bar, CartesianGrid, Tooltip, ResponsiveContainer, XAxis, YAxis, Legend} from 'recharts';
-import {Api} from "../../services/api";
+import {Api} from '../../services/api';
+import {useParams} from 'react-router-dom'
 
+/**
+ * @name CustomTooltip
+ * @description - This component will render weight and burned calories by hover effect.
+ * @returns {JSX.Element}
+ */
+
+//ToolTip for the recharts graph
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -15,13 +23,20 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+/**
+ * @name DailyActivities
+ * @description - This component will render the daily weight and daily burned calories for a specific user..
+ * @returns {JSX.Element}
+ */
+
 const DailyActivities = () => {
     const [activities, setActivities] = useState([]);
+    const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-            const result  = await new Api().getDailyActivities()
-            setActivities(result);
+            const response  = await new Api().getDailyActivities(id)
+            setActivities(response);
         })();
     }, []);
 
@@ -47,14 +62,14 @@ const DailyActivities = () => {
                                    align="right"
                                    tickLine={false}
                                    axisLine={false}
-                                   tick={{ fontSize: 20, fill: '#74798c'}}
+                                   tick={{ fontSize: 20, fill: "#74798c"}}
                                    tickCount={4}
-                                   domain={['dataMin - 1', 'dataMax + 1']}
+                                   domain={["dataMin - 1", "dataMax + 1"]}
                             />
                             <YAxis
                                 yAxisId="calories"
                                 orientation="right"
-                                tick={{ fontSize: 18, fill: '#74798c', strokeWidth: 6}}
+                                tick={{ fontSize: 18, fill: "#74798c", strokeWidth: 6}}
                                 tickLine={false}
                                 dataKey="calories"
                                 hide={true}

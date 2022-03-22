@@ -1,9 +1,15 @@
 import React from 'react';
-import styles from './VerticalNavbar.module.scss'
-import Meditation from '../../assets/meditation.svg'
-import Swim from '../../assets/swim.svg'
-import Bike from '../../assets/bike.svg'
-import Alter from '../../assets/alter.svg'
+import styles from './VerticalNavbar.module.scss';
+import Meditation from '../../assets/meditation.svg';
+import Swim from '../../assets/swim.svg';
+import Bike from '../../assets/bike.svg';
+import Alter from '../../assets/alter.svg';
+
+/**
+ * @name VerticalNavbar
+ * @description This is the vertical navbar component.
+ * @returns {JSX.Element}
+ */
 
 const VerticalNavbar = () => {
    return   <>

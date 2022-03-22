@@ -1,14 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Welcome.module.scss';
-import {Mock} from "../../services/mock";
+import {Api} from '../../services/api';
+import {useParams} from "react-router-dom";
+
+
+/**
+ * @name Welcome
+ * @description This is the welcome card component.
+ * @returns {JSX.Element}
+ */
 
 const Welcome = () => {
-    const [firstname, setfirstname] = useState([]);
-    
+    const [firstname, setFirstname] = useState("");
+    const {id} = useParams();
+
     useEffect(() => {
         (async () => {
-            const response  = await new Mock().getUser()
-            setfirstname(response[0].userInfos.firstName);
+            const response  = await new Api().getUser(id)
+            setFirstname(response.userInfos.firstName);
         })();
     }, []);
 

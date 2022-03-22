@@ -1,6 +1,12 @@
 import React from 'react';
 import Logo from '../../assets/logo.png';
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
+
+/**
+ * @name Header
+ * @description This is the header component.
+ * @returns {JSX.Element}
+ */
 
 const Header = () => {
     return  <>

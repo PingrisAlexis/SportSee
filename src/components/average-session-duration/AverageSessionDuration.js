@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import styles from './AverageSessionDuration.module.scss'
-import { Tooltip, ResponsiveContainer, XAxis, YAxis,Line, LineChart } from 'recharts';
-import {Mock} from "../../services/mock";
-import {Api} from "../../services/api";
-import axios from "axios";
+import styles from './AverageSessionDuration.module.scss';
+import {Tooltip, ResponsiveContainer, XAxis, YAxis,Line, LineChart} from 'recharts';
+import {Api} from '../../services/api';
+import {useParams} from 'react-router-dom'
 
+/**
+ * @name CustomTooltip
+ * @description - This component will render session duration by hover effect.
+ * @returns {JSX.Element}
+ */
 
+//ToolTip for the recharts graph
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
@@ -17,19 +22,26 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
+/**
+ * @name AverageSessionDuration
+ * @description - This component will render weekly sessions duration for a specific user.
+ * @returns {JSX.Element}
+ */
+
 const AverageSessionDuration = () => {
     const [averages, setAverages] = useState([]);
+    const {id} = useParams();
 
     useEffect(() => {
         (async () => {
-            const result  = await new Api().getAverageSessionDuration();
-                setAverages(result);
+            const response  = await new Api().getAverageSessionDuration(id);
+                setAverages(response);
         })();
     }, []);
 
     return <>
             <div className={styles.average_session_duration_container}>
-                <h2>Durée moyenne des <br></br>sessions</h2>
+                <h2>Durée moyenne des <br/>sessions</h2>
                 <ResponsiveContainer title="Durée moyenne des sessions" width="100%" height="100%">
                         <LineChart width={730} height={250} data={averages}
                            margin={{ top: 40, right: 10, left: 10, bottom: 80 }}>
@@ -46,7 +58,7 @@ const AverageSessionDuration = () => {
                                    axisLine={false}
                                    dy={15}
                                    tickLine={false}
-                                   tick={{fill : 'white', fontSize: 12, fontWeight: 500
+                                   tick={{fill : "white", fontSize: 12, fontWeight: 500
                                    }}
                             />
 
