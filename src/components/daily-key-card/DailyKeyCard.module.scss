@@ -1,19 +1,18 @@
 .daily_key_card_container {
   display: flex;
   flex-direction: row;
-  margin: 3rem;
   position: relative;
-  bottom: 3rem;
   background: var(--tertiary-color);
   height: 12.5rem;
   width: 30rem;
   border-radius: 0.5rem;
   align-items: center;
-  margin-left: 10rem;
+  @media screen and (max-width: 1500px) {
+   margin:  1rem 0;
+  }
   img {
     margin-left: 3rem;
     width: 8rem;
-    //height: 7rem;
     padding: 1rem;
     border-radius: 0.5rem;
   }

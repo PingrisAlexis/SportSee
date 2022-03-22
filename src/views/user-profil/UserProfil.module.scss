@@ -4,10 +4,22 @@
   position: absolute;
   top: 30rem;
   left: 20rem;
+  width: 80vw;
+  @media screen and (max-width: 1500px) {
+   left: 10rem;
+    width: 90vw;
+  }
 }
 
 .user_profil_bottom_part {
-  margin-top: 12rem ;
+  margin-top: 3rem ;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.main_container {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

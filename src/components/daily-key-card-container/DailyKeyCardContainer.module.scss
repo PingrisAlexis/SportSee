@@ -1,4 +1,11 @@
 .daily_key_figures_container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 1500px) {
+    width: 85vw;
+    flex-flow: row wrap;
+    margin-top: 3rem;
+  }
 }
