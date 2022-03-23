@@ -1,11 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './OverallPerformances.module.scss';
 import {RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Radar} from 'recharts';
-import {Api} from '../../services/api';
-import {useParams} from 'react-router-dom';
-import DailyActivities from "../daily-activities/DailyActivities";
 import PropTypes from "prop-types";
-
 /**
  * @name OverallPerformances
  * @description This component will render the global performance for a specific user.
@@ -14,7 +10,6 @@ import PropTypes from "prop-types";
  */
 
 const OverallPerformances = ( {performance}) => {
-
 
     return  <div className={styles.overall_performances_container} >
         <ResponsiveContainer width="100%" height="100%">
@@ -36,8 +31,9 @@ const OverallPerformances = ( {performance}) => {
     </div>
 
 }
-// OverallPerformances.propTypes = {
-//     performance : PropTypes.object,
-// }
+
+OverallPerformances.propTypes = {
+    performance : PropTypes.array.isRequired,
+}
 
 export default OverallPerformances;

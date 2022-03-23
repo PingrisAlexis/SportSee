@@ -1,7 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {DailyKeyCard} from '../index';
-import {Api} from '../../services/api';
-import {useParams} from 'react-router-dom';
 import styles from './DailyKeyCardContainer.module.scss';
 import calorie from '../../assets/calorie.svg';
 import chicken from '../../assets/chicken.svg';

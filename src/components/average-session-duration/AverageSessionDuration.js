@@ -67,12 +67,9 @@ const AverageSessionDuration = ({averages}) => {
                 </ResponsiveContainer>
             </div>
 }
-// AverageSessionDuration.propTypes = {
-//     userSessionAverage: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             day: PropTypes.number,
-//             sessionLength: PropTypes.number,
-//         })
-//     ).isRequired,
-// }
+
+AverageSessionDuration.propTypes = {
+    averages : PropTypes.array.isRequired,
+}
+
 export default AverageSessionDuration;

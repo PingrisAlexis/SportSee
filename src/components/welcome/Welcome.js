@@ -10,15 +10,15 @@ import PropTypes from 'prop-types';
  */
 
 const Welcome = ({firstName}) => {
-
+   console.log({firstName})
     return <div className={styles.welcome_container}>
                 <h1>Bonjour <span>{firstName}</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏 </p>
             </div>
 }
 
- Welcome.propTypes = {
-    firstName: PropTypes.any.isRequired
- }
+Welcome.propTypes = {
+    firstName: PropTypes.string.isRequired
+}
  
 export default Welcome;

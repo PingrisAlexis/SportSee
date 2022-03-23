@@ -95,8 +95,8 @@ const DailyActivities = ({ activities }) => {
                 </div>
 }
 
-// DailyActivities.propTypes = {
-//     activities : PropTypes.array,
-// }
+DailyActivities.propTypes = {
+    activities : PropTypes.array.isRequired,
+}
 
 export default DailyActivities;
