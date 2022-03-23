@@ -14,15 +14,7 @@ import PropTypes from "prop-types";
  */
 
 const OverallPerformances = ( {performance}) => {
-    // const [performances, setPerformances] = useState([]);
-    // const {id} = useParams();
-    //
-    // useEffect(() => {
-    //     (async () => {
-    //         const response  = await new Api().getPerformances(id)
-    //         setPerformances(response);
-    //     })();
-    // }, []);
+
 
     return  <div className={styles.overall_performances_container} >
         <ResponsiveContainer width="100%" height="100%">

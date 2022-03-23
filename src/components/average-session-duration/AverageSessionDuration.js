@@ -30,19 +30,9 @@ const CustomTooltip = ({ active, payload }) => {
  * @returns {JSX.Element}
  */
 
-const AverageSessionDuration = () => {
-    const [averages, setAverages] = useState([]);
-    const {id} = useParams();
+const AverageSessionDuration = ({averages}) => {
 
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getAverageSessionDuration(id);
-                setAverages(response);
-        })();
-    }, []);
-
-    return <>
-            <div className={styles.average_session_duration_container}>
+    return  <div className={styles.average_session_duration_container}>
                 <h2>Durée moyenne des <br/>sessions</h2>
                 <ResponsiveContainer title="Durée moyenne des sessions" width="100%" height="100%">
                         <LineChart width={730} height={250} data={averages}
@@ -76,7 +66,13 @@ const AverageSessionDuration = () => {
                         </LineChart>
                 </ResponsiveContainer>
             </div>
-    </>
 }
-
+// AverageSessionDuration.propTypes = {
+//     userSessionAverage: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             day: PropTypes.number,
+//             sessionLength: PropTypes.number,
+//         })
+//     ).isRequired,
+// }
 export default AverageSessionDuration;

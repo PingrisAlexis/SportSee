@@ -9,8 +9,7 @@ import styles from './Header.module.scss';
  */
 
 const Header = () => {
-    return  <>
-            <header className={styles.header_container}>
+    return  <header className={styles.header_container}>
                 <img src={Logo} />
                 <ul>
                     <li>
@@ -26,7 +25,6 @@ const Header = () => {
                         Communauté
                     </li>
                 </ul>
-        </header>
-    </>
+            </header>     
 }
 export default Header;

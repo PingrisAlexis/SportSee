@@ -10,6 +10,7 @@ function App() {
           <BrowserRouter>
               <Header />
               <VerticalNavbar />
+              {/*<UserProfil />*/}
               <Switch>
                   {/*<Route path="/" exact>*/}
                   {/*    <Redirect to="/users/12" />*/}

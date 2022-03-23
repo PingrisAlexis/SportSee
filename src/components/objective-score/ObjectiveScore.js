@@ -10,24 +10,14 @@ import {useParams} from 'react-router-dom'
  * @returns {JSX.Element}
  */
 
-const ObjectiveScore = () => {
-    const [score, setScore] = useState("");
-    const {id} = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getUser(id)
-            setScore(response.todayScore);
-        })();
-    }, []);
+const ObjectiveScore = ({score}) => {
 
     const scoreValueScale = [{
         value: score * 100
     }]
     const currentUserScore = score * 100
 
-    return <>
-             <div className={styles.objective_score_container}>
+    return <div className={styles.objective_score_container}>
                 <h2>Score</h2>
                 <ResponsiveContainer width="100%" height="100%">
                     <RadialBarChart data={scoreValueScale}
@@ -63,6 +53,5 @@ const ObjectiveScore = () => {
                     </RadialBarChart>
                 </ResponsiveContainer>
             </div>
-    </>
 }
 export default ObjectiveScore;

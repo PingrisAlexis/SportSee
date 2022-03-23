@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './Welcome.module.scss';
 import PropTypes from 'prop-types';
 
@@ -9,16 +9,16 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element}
  */
 
-const Welcome = ({ user }) => {
-    console.log(user)
+const Welcome = ({firstName}) => {
+
     return <div className={styles.welcome_container}>
-                <h1>Bonjour <span>{user.userInfos.firstName}</span></h1>
+                <h1>Bonjour <span>{firstName}</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏 </p>
             </div>
 }
 
  Welcome.propTypes = {
-    user: PropTypes.object
+    firstName: PropTypes.any.isRequired
  }
-
+ 
 export default Welcome;

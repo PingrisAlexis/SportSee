@@ -77,7 +77,7 @@ export class Api {
         return await  axios.get(this.baseURL + `/user/`+ userId)
             .then( response => {
               return   {
-                  id: response.data.data.id,
+                  id: response.data.data.id,    
                   userInfos: response.data.data.userInfos,
                   keyData: response.data.data.keyData,
                   todayScore: response.data.data.todayScore || response.data.data.score

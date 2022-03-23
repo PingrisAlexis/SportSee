@@ -15,17 +15,8 @@ import cheeseburger from '../../assets/cheeseburger.svg';
  * @returns {JSX.Element}
  */
 
-const DailyKeyCardContainer = () => {
-    const [dailyKeyCards, setDailyKeyCards] = useState([]);
-    const {id} = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getUser(id)
-            setDailyKeyCards(response.keyData);
-        })();
-    }, []);
-
+const DailyKeyCardContainer = ({dailyKeyCards}) => {
+    
     return   <div className={styles.daily_key_figures_container}>
                 <DailyKeyCard name="Calories" icon={calorie} content={dailyKeyCards.calorieCount} unity="kCal"/>
                 <DailyKeyCard name="Proteines" icon={chicken} content={dailyKeyCards.proteinCount} unity="g"/>
