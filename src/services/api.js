@@ -15,7 +15,7 @@ export class Api {
     /**
      * @name  getAverageSessionDuration
      * @param {Integer} userId
-     * @returns {Object} Return anobject with the user data (day, sessionLenght)
+     * @returns {Object} Return an object with the user data (day, sessionLenght)
      */
     async getAverageSessionDuration(userId) {
 
@@ -85,4 +85,4 @@ export class Api {
             })
             .catch( err => console.log(err));
     }
-}  
+}

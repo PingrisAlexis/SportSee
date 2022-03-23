@@ -3,10 +3,13 @@ import styles from './DailyActivities.module.scss';
 import {BarChart, Bar, CartesianGrid, Tooltip, ResponsiveContainer, XAxis, YAxis, Legend} from 'recharts';
 import {Api} from '../../services/api';
 import {useParams} from 'react-router-dom'
+import PropTypes from "prop-types";
 
 /**
  * @name CustomTooltip
  * @description - This component will render weight and burned calories by hover effect.
+ * @param{number}
+
  * @returns {JSX.Element}
  */
 
@@ -29,19 +32,9 @@ const CustomTooltip = ({ active, payload }) => {
  * @returns {JSX.Element}
  */
 
-const DailyActivities = () => {
-    const [activities, setActivities] = useState([]);
-    const {id} = useParams();
+const DailyActivities = ({ activities }) => {
 
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getDailyActivities(id)
-            setActivities(response);
-        })();
-    }, []);
-
-    return  <>
-                <div className={styles.daily_activities_container}>
+    return      <div className={styles.daily_activities_container}>
                     <h2>Activité quotidienne</h2>
                     <ResponsiveContainer title="Activité quotidienne" width="100%" height={250}>
                         <BarChart
@@ -100,7 +93,10 @@ const DailyActivities = () => {
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-        </>
 }
+
+// DailyActivities.propTypes = {
+//     activities : PropTypes.array,
+// }
 
 export default DailyActivities;

@@ -6,7 +6,7 @@ import {useParams} from 'react-router-dom'
 
 /**
  * @name ObjectiveScore
- * @description This component will render the percentage of activities objective for a specific user.
+ * @description This component will render the current percentage of activities objective for a specific user.
  * @returns {JSX.Element}
  */
 
