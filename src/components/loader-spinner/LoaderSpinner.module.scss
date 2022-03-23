@@ -1,0 +1,19 @@
+/* Center the loader */
+.loader {
+  border: 1rem solid var(--tertiary-color);
+  border-top: 1rem solid var(--primary-color);
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

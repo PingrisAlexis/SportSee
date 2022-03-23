@@ -16,7 +16,7 @@ const OverallPerformances = ( {performance}) => {
             <RadarChart outerRadius={90}  data={performance}>
                 <PolarGrid radialLines={false} />
                 <PolarAngleAxis
-                    dataKey="subject"
+                    dataKey="kind"
                     tickSize={10}
                     tick={{
                         fill: "white",
@@ -25,7 +25,7 @@ const OverallPerformances = ( {performance}) => {
                         y: 200,
                     }}
                 />
-                <Radar dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+                <Radar dataKey="performanceValue" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
             </RadarChart>
         </ResponsiveContainer>
     </div>

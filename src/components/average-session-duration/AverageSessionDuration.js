@@ -1,10 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from './AverageSessionDuration.module.scss';
 import {Tooltip, ResponsiveContainer, XAxis, YAxis,Line, LineChart} from 'recharts';
-import {Api} from '../../services/api';
-import {useParams} from 'react-router-dom'
 import PropTypes from "prop-types";
-import DailyActivities from "../daily-activities/DailyActivities";
 
 /**
  * @name CustomTooltip
@@ -53,7 +50,6 @@ const AverageSessionDuration = ({averages}) => {
                                    tick={{fill : "white", fontSize: 12, fontWeight: 500
                                    }}
                             />
-
                             <YAxis  dataKey="sessionLength" hide={true}  domain={[0, "dataMax"]}/>
                             <Line type="natural"
                                   strokeWidth={2}

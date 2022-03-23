@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './DailyActivities.module.scss';
 import {BarChart, Bar, CartesianGrid, Tooltip, ResponsiveContainer, XAxis, YAxis, Legend} from 'recharts';
-import {Api} from '../../services/api';
-import {useParams} from 'react-router-dom'
 import PropTypes from "prop-types";
 
 /**
@@ -81,6 +79,13 @@ const DailyActivities = ({ activities }) => {
                                  name="Poids (kg)"
                                  barSize={7}
                                  fill="#020203"
+                                 radius={[50, 50, 0, 0]}
+                            />
+                            <Bar dataKey="calories"
+                                 yAxisId="calories"
+                                 name="Calories brûlées (kCal)"
+                                 barSize={1}
+                                 fill="transparent"
                                  radius={[50, 50, 0, 0]}
                             />
                             <Bar dataKey="calories"

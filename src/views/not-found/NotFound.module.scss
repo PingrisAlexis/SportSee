@@ -1,10 +1,12 @@
 .NotFound_container {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  margin-top: -10rem;
+  width: 40rem;
+  margin-left: -20rem;
+  text-align: center;
   h1, h2, .nav_link {
     color: var(--primary-color)
   }

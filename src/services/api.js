@@ -61,8 +61,8 @@ export class Api {
                 const kindName = ["cardio", "energie", "endurance", "force", "vitesse", "intensité"]
 
                 return {
-                    subject: kindName[index],
-                    A: performance.value
+                    kind: kindName[index],
+                    performanceValue: performance.value
                 }
             }))
             .catch( err => console.log(err));

@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from './ObjectiveScore.module.scss';
 import {RadialBarChart, PolarAngleAxis, ResponsiveContainer, RadialBar} from 'recharts';
-import {Api} from '../../services/api';
-import {useParams} from 'react-router-dom'
 
 /**
  * @name ObjectiveScore
@@ -54,4 +52,5 @@ const ObjectiveScore = ({score}) => {
                 </ResponsiveContainer>
             </div>
 }
+
 export default ObjectiveScore;

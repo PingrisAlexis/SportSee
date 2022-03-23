@@ -17,5 +17,6 @@ const DailyKeyCard = (props) => {
                     <h3>{name}</h3>
                 </figcaption>
             </figure>
-}
+};
+
 export default DailyKeyCard;
