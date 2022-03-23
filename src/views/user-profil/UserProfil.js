@@ -28,54 +28,24 @@ const UserProfil = () => {
 
     useEffect(() => {
         (async () => {
-            const response  = await new Api().getUser(id);
-            setFirstName(response.userInfos.firstName);
-            setScore(response.todayScore);
-            setDailyKeyCards(response.keyData)
+            const getUser  = await new Api().getUser(id);
+            const getPerformance  = await new Api().getPerformances(id);
+            const getDailyActivity  = await new Api().getDailyActivities(id);
+            const getAverage  = await new Api().getAverageSessionDuration(id);
 
-        })();
-    }, []);
-
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getPerformances(id);
-            setPerformance(response);
-        })();
-    }, []);
-
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getDailyActivities(id);
-            setActivity(response);
-        })();
-    }, []);
-
-
-    useEffect(() => {
-        (async () => {
-            const response  = await new Api().getAverageSessionDuration(id);
-            setAverages(response);
+            Promise.all([getUser, getPerformance, getDailyActivity, getAverage])
+                .then(([userResult,performanceResult, activityResult, averageResult]) => {
+                    setFirstName(userResult.userInfos.firstName);
+                    setScore(userResult.todayScore);
+                    setDailyKeyCards(userResult.keyData);
+                    setPerformance(performanceResult);
+                    setActivity(activityResult);
+                    setAverages(averageResult);
+                })
+                .catch(error => console.log(`Error in promises ${error}`))
         })();
     }, []);
     
-    // useEffect(() => {
-    //     const getUser = service.getUser(id)
-    //     const getPerformance = service.getPerformances(id)
-    //     const getActivity = service.getDailyActivities(id)
-    //     Promise.all([getUser, getActivity])
-    //            .then(([userResult, activityResult]) => {
-    //                setUser(userResult)
-    //                // setPerformance(performanceResult)
-    //                setActivity(activityResult)
-    //     })
-    //         .catch(error => console.log(`Error in promises ${error}`))
-    // }, null);
-
-    //
-    // if (!firstName) {
-    //     return null;
-    // }
-
     return  <main className={styles.user_profil_container}>
                 <Welcome firstName={firstName} />
 
