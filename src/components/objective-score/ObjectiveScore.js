@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import styles from './ObjectiveScore.module.scss';
 import {RadialBarChart, PolarAngleAxis, ResponsiveContainer, RadialBar} from 'recharts';
+import PropTypes from "prop-types";
+import AverageSessionDuration from "../average-session-duration/AverageSessionDuration";
 
 /**
  * @name ObjectiveScore
  * @description This component will render the current percentage of activities objective for a specific user.
+ * @param {number} Score
  * @returns {JSX.Element}
  */
 
@@ -51,6 +54,10 @@ const ObjectiveScore = ({score}) => {
                     </RadialBarChart>
                 </ResponsiveContainer>
             </div>
-}
+};
+
+ObjectiveScore.propTypes = {
+    score : PropTypes.number.isRequired,
+};
 
 export default ObjectiveScore;

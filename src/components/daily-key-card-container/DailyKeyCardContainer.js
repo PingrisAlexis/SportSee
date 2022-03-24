@@ -5,11 +5,12 @@ import calorie from '../../assets/calorie.svg';
 import chicken from '../../assets/chicken.svg';
 import apple from '../../assets/apple.svg';
 import cheeseburger from '../../assets/cheeseburger.svg';
-
+import PropTypes from "prop-types";
 
 /**
  * @name DailyKeyCardContainer
  * @description This component is a container to the daily key cards for a specific user.
+ * @param {object} dailyKeyCards
  * @returns {JSX.Element}
  */
 
@@ -21,5 +22,10 @@ const DailyKeyCardContainer = ({dailyKeyCards}) => {
                 <DailyKeyCard name="Glucides" icon={apple} content={dailyKeyCards.carbohydrateCount} unity="g"/>
                 <DailyKeyCard name="Lipides" icon={cheeseburger} content={dailyKeyCards.lipidCount} unity="g"/>
             </div>
-}
+};
+
+DailyKeyCardContainer.propTypes = {
+    dailyKeyCards : PropTypes.object.isRequired,
+};
+
 export default DailyKeyCardContainer;

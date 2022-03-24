@@ -30,10 +30,15 @@ const OverallPerformances = ( {performance}) => {
         </ResponsiveContainer>
     </div>
 
-}
+};
 
 OverallPerformances.propTypes = {
-    performance : PropTypes.array.isRequired,
-}
+    performance : PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.number,
+            kind: PropTypes.number,
+        })
+    ).isRequired,
+};
 
 export default OverallPerformances;

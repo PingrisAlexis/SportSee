@@ -62,5 +62,10 @@
 
 - Then, install dependencies : `npm install`
 
-- Now, you can run the front-end server (port 3001):  `npm run start`
+- Terminal will told you that something is already running on port 3000 (backend part),
+and will ask to you if you want to run the app on another port. Just press `Y`. 
+
+- Now, you can run the front-end server (port 3001):  `npm start` 
+
+
 

@@ -1,4 +1,5 @@
-import {Api} from "./api";
+import {Api} from './api';
+import {Mock} from './mock';
 
 class Service {
     constructor(source) {

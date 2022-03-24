@@ -10,5 +10,6 @@ import styles from './LoaderSpinner.module.scss';
 const LoaderSpinner = () => {
     return  <div className={styles.loader} />
 
-}
+};
+
 export default LoaderSpinner;

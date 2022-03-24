@@ -24,6 +24,9 @@ const CustomTooltip = ({ active, payload }) => {
 /**
  * @name AverageSessionDuration
  * @description - This component will render weekly sessions duration for a specific user.
+ * @param {array} averages
+ * @param {string} averages.day
+ * @param {number} averages.sessionLength
  * @returns {JSX.Element}
  */
 
@@ -65,7 +68,12 @@ const AverageSessionDuration = ({averages}) => {
 }
 
 AverageSessionDuration.propTypes = {
-    averages : PropTypes.array.isRequired,
+    averages : PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string,
+            sessionLength: PropTypes.number,
+        })
+    ).isRequired,
 }
 
 export default AverageSessionDuration;

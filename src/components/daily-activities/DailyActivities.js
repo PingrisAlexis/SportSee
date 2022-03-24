@@ -6,8 +6,6 @@ import PropTypes from "prop-types";
 /**
  * @name CustomTooltip
  * @description - This component will render weight and burned calories by hover effect.
- * @param{number}
-
  * @returns {JSX.Element}
  */
 
@@ -26,7 +24,11 @@ const CustomTooltip = ({ active, payload }) => {
 
 /**
  * @name DailyActivities
- * @description - This component will render the daily weight and daily burned calories for a specific user..
+ * @description - This component will render the daily weight and daily burned calories for a specific user.
+ * @param {array} activities
+ * @param {string} activities.day
+ * @param {number} activities.kilogram
+ * @param {number} activities.calories
  * @returns {JSX.Element}
  */
 
@@ -98,10 +100,16 @@ const DailyActivities = ({ activities }) => {
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-}
+};
 
 DailyActivities.propTypes = {
-    activities : PropTypes.array.isRequired,
-}
+    activities : PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string,
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+        })
+    ).isRequired,
+};
 
 export default DailyActivities;
