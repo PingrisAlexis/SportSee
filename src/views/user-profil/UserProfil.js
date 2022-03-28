@@ -21,24 +21,23 @@ import {NotFound} from "../index";
 
 const UserProfil = () => {
     const { id } =  useParams();
-    const [userId, setUserId] = useState([])
+
     const [loading, setLoading] = useState(true);
-    const [error404, setError404] = useState(false)
+    const [error404, setError404] = useState(false);
     const [firstName, setFirstName] = useState([]);
     const [performance, setPerformance] = useState([]);
     const [activity, setActivity] = useState([]);
     const [averages, setAverages] = useState([]);
     const [score, setScore] = useState([]);
     const [dailyKeyCards, setDailyKeyCards] = useState([]);
-    const api = new Api;
 
     useEffect(() => {
         const timer = setTimeout(() => {
             (() => {
-                const getUser  =  api.getUser(id);
-                const getPerformance  =  api.getPerformances(id);
-                const getDailyActivity  =  api.getDailyActivities(id);
-                const getAverage  =  api.getAverageSessionDuration(id);
+                const getUser  =  service.getUser(id);
+                const getPerformance  =  service.getPerformances(id);
+                const getDailyActivity  =  service.getDailyActivities(id);
+                const getAverage  =  service.getAverageSessionDuration(id);
 
                 Promise.all([getUser, getPerformance, getDailyActivity, getAverage])
                     .then(([userResult,performanceResult, activityResult, averageResult] ) => {
@@ -66,28 +65,28 @@ const UserProfil = () => {
                 if (error404 === true) {
                     return <Redirect to={NotFound} />
                 }  else {
-                        return loading ? <LoaderSpinner/> :
+                    return loading ? <LoaderSpinner/> :
 
-                           <main className={styles.user_profil_container}>
-                                <Welcome firstName={firstName}/>
+                        <main className={styles.user_profil_container}>
+                            <Welcome firstName={firstName}/>
 
-                                <div className={styles.main_container}>
-                                    <div className={styles.charts_container}>
+                            <div className={styles.main_container}>
+                                <div className={styles.charts_container}>
 
-                                        <DailyActivities activities={activity}/>
-                                        <div className={styles.user_profil_bottom_part}>
-                                            <AverageSessionDuration averages={averages}/>
-                                            <OverallPerformances performance={performance}/>
-                                            <ObjectiveScore score={score}/>
-                                        </div>
-
+                                    <DailyActivities activities={activity}/>
+                                    <div className={styles.user_profil_bottom_part}>
+                                        <AverageSessionDuration averages={averages}/>
+                                        <OverallPerformances performance={performance}/>
+                                        <ObjectiveScore score={score}/>
                                     </div>
-                                    <DailyKeyCardContainer dailyKeyCards={dailyKeyCards}/>
+
                                 </div>
-                            </main>
+                                <DailyKeyCardContainer dailyKeyCards={dailyKeyCards}/>
+                            </div>
+                        </main>
                 }
             })()}
-         </>
+        </>
     )
 }
 

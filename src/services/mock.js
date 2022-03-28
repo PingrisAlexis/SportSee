@@ -114,7 +114,6 @@ const USER_ACTIVITY = [
     }
 ]
 
-
 const USER_AVERAGE_SESSIONS = [
     {
         userId: 12,
@@ -183,7 +182,6 @@ const USER_AVERAGE_SESSIONS = [
         ]
     }
 ]
-
 
 const USER_PERFORMANCE = [
     {
@@ -261,95 +259,75 @@ const USER_PERFORMANCE = [
         ]
     }
 ]
-
-
+/**
+ *
+ * @param {String} response
+ * @param {Number} id
+ * @description Get and transform data to front-end part.
+ * @returns Object
+ */
 export class Mock {
-    async getAverageSessionDuration() {
-       return [
-            {
-                day: "L",
-                sessionLength: 30
-            },
-            {
-                day: "M",
-                sessionLength: 23
-            },
-            {
-                day: "M",
-                sessionLength: 45
-            },
-            {
-                day: "J",
-                sessionLength: 50
-            },
-            {
-                day: "V",
-                sessionLength: 0
-            },
-            {
-                day: "S",
-                sessionLength: 0
-            },
-            {
-                day: "D",
-                sessionLength: 60
-            }
-        ]
-    }
-    async getDailyActivities() {
-         return [
-             {
-                 day: '01',
-                 kilogram: 80,
-                 calories: 240
-             },
-             {
-                 day: '02',
-                 kilogram: 80,
-                 calories: 220
-             },
-             {
-                 day: '03',
-                 kilogram: 81,
-                 calories: 280
-             },
-             {
-                 day: '04',
-                 kilogram: 81,
-                 calories: 290
-             },
-             {
-                 day: '05',
-                 kilogram: 80,
-                 calories: 160
-             },
-             {
-                 day: '06',
-                 kilogram: 78,
-                 calories: 162
-             },
-             {
-                 day: '07',
-                 kilogram: 76,
-                 calories: 390
-             }
-        ]
-    }
+    /**
+     * @name  getUser
+     * @param {Integer} id
+     * @returns {Object} Return an object with user datas (id, userInfos, keyData, todayScore or score)
+     */
+    async getUser(id) {
 
-    async getUser(userId) {
-        return USER_MAIN_DATA.find(user => user.id === userId);
-    }
+        return USER_MAIN_DATA.find(user => user.id === parseInt(id))
+    };
+    /**
+     * @name  getPerformances
+     * @param {Integer} id
+     * @returns {Object} Return an object with user datas (subject, A)
+     */
+    async getPerformances(id) {
+        const userPerformance = USER_PERFORMANCE.find(user => user.userId === parseInt(id));
 
-    async getPerformances(userId) {
-        const userPerformance = USER_PERFORMANCE.find(user => user.id === userId);
-        console.log(userPerformance);
         return userPerformance.data.map((performance, index) => {
             const kindName = ["cardio", "energie", "endurance", "force", "vitesse", "intensité"]
 
             return {
-                subject: kindName[index],
-                A: performance.value
+                kind: kindName[index],
+                performanceValue: performance.value
             }
         })
-    }
+    };
+    /**
+     * @name  getDailyActivities
+     * @param {Integer} id
+     * @returns {Object} Return an object with user datas (day, kilogram, calories)
+     */
+    async getDailyActivities(id) {
+
+        const userDailyActivities = USER_ACTIVITY.find(user => user.userId === parseInt(id))
+
+        return  userDailyActivities.sessions.map((activity, index) => {
+            const dayNumber = ["01", "02", "03", "04", "05", "06", "07", "08", "09","10"];
+
+            return {
+                day: dayNumber[index],
+                kilogram: activity.kilogram,
+                calories: activity.calories
+            }
+        })
+    };
+    /**
+     * @name  getAverageSessionDuration
+     * @param {Integer} id
+     * @returns {Object} Return an object with user datas (day, sessionLenght)
+     */
+    async getAverageSessionDuration(id) {
+
+        const userAverageSessionDuration =  USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(id))
+
+        return userAverageSessionDuration.sessions.map((session, index) => {
+                const firstDaysLetter = ["L", "M", "M", "J", "V", "S", "D"];
+
+                return {
+                    day: firstDaysLetter[index],
+                    sessionLength: session.sessionLength
+                }
+            })
+    };
 }

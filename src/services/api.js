@@ -4,7 +4,7 @@ import axios from 'axios';
  *
  * @param {String} response
  * @param {Number} userId
- * @description APi that's get and transform data to front-end part.
+ * @description Get and transform data to front-end part.
  * @returns Object
  */
 
@@ -15,11 +15,11 @@ export class Api {
     /**
      * @name  getAverageSessionDuration
      * @param {Integer} userId
-     * @returns {Object} Return an object with the user data (day, sessionLenght)
+     * @returns {Object} Return an object with user datas (day, sessionLenght)
      */
     async getAverageSessionDuration(userId) {
 
-       return await axios.get(this.baseURL + `/user/`+ userId +`/average-sessions`)
+        return await axios.get(this.baseURL + `/user/`+ userId +`/average-sessions`)
             .then( response => response.data.data.sessions.map((session, index) => {
                 const firstDaysLetter = ["L", "M", "M", "J", "V", "S", "D"];
 
@@ -33,7 +33,7 @@ export class Api {
     /**
      * @name  getDailyActivities
      * @param {Integer} userId
-     * @returns {Object} Return an object with the user data (day, kilogram, calories)
+     * @returns {Object} Return an object with user datas (day, kilogram, calories)
      */
     async getDailyActivities(userId) {
 
@@ -52,7 +52,7 @@ export class Api {
     /**
      * @name  getPerformances
      * @param {Integer} userId
-     * @returns {Object} Return an object with the user data (subject, A)
+     * @returns {Object} Return an object with user datas (subject, A)
      */
     async getPerformances(userId) {
 
@@ -70,18 +70,18 @@ export class Api {
     /**
      * @name  getUser
      * @param {Integer} userId
-     * @returns {Object} Return an object with the user data (id, userInfos, keyData, todayScore or score)
+     * @returns {Object} Return an object with user datas (id, userInfos, keyData, todayScore or score)
      */
     async getUser(userId) {
 
         return await  axios.get(this.baseURL + `/user/`+ userId)
             .then( response => {
-              return   {
-                  id: response.data.data.id,    
-                  userInfos: response.data.data.userInfos,
-                  keyData: response.data.data.keyData,
-                  todayScore: response.data.data.todayScore || response.data.data.score
-              }
+                return   {
+                    id: response.data.data.id,
+                    userInfos: response.data.data.userInfos,
+                    keyData: response.data.data.keyData,
+                    todayScore: response.data.data.todayScore || response.data.data.score
+                }
             })
             .catch( err => console.log(err));
     }
