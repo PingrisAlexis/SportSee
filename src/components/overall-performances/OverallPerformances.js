@@ -36,7 +36,7 @@ OverallPerformances.propTypes = {
     performance : PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.number,
-            kind: PropTypes.number,
+            kind: PropTypes.string,
         })
     ).isRequired,
 };

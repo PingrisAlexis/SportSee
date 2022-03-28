@@ -17,6 +17,10 @@ class Service {
 
         return this.source.getDailyActivities(userId)
     }
+    async getAverageSessionDuration(userId) {
+
+        return this.source.getAverageSessionDuration(userId)
+    }
 }
 
 export const service = new Service(new Api())
