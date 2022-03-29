@@ -4,17 +4,8 @@
 
 ### Specifications:
 
-- Technologies used: React, React Router, Recharts, Axios or Fetch.
+- Technologies used: React, React Router, Recharts, Axios.
 
-- Breakdown into modular and reusable components
-
-- One component per file
-
-- Logical structure of the different files
-
-- Use of props between components
-
-- Use of state in components when necessary .
 
 ### Elements provided:
 
@@ -36,7 +27,7 @@
 
 - Create a folder, open it with you IDE, and follow the instructions:
 
-#### BACK-END:
+#### Back-end:
 
 - NodeJS version 12.18 (You can use [NVM](https://github.com/nvm-sh/nvm) to manage NodeJS versions)
 
@@ -52,7 +43,7 @@
 
 - Now, you can run the back-end server (port 3000):  `yarn start`
 
-#### FRONT-END:
+#### Front-end:
 
 - Clone the front-end part and install dependencies:
 
@@ -66,6 +57,10 @@
 and will ask to you if you want to run the app on another port. Just press `Y`. 
 
 - Now, you can run the front-end server (port 3001):  `npm start` 
+
+### Project:
+
+- To switch between the two differents users, please, select the adress bar, and go to`http://localhost:3001/users/12` or, `http://localhost:3001/users/18` 
 
 
 
