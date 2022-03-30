@@ -261,15 +261,12 @@ const USER_PERFORMANCE = [
 ]
 /**
  *
- * @param {String} response
- * @param {Number} id
  * @description Get and transform data to front-end part.
- * @returns Object
  */
 export class Mock {
     /**
      * @name  getUser
-     * @param {Integer} id
+     * @param {number} id
      * @returns {Object} Return an object with user datas (id, userInfos, keyData, todayScore or score)
      */
     async getUser(id) {
@@ -278,7 +275,7 @@ export class Mock {
     };
     /**
      * @name  getPerformances
-     * @param {Integer} id
+     * @param {number} id
      * @returns {Object} Return an object with user datas (subject, A)
      */
     async getPerformances(id) {
@@ -295,7 +292,7 @@ export class Mock {
     };
     /**
      * @name  getDailyActivities
-     * @param {Integer} id
+     * @param {number} id
      * @returns {Object} Return an object with user datas (day, kilogram, calories)
      */
     async getDailyActivities(id) {
@@ -314,7 +311,7 @@ export class Mock {
     };
     /**
      * @name  getAverageSessionDuration
-     * @param {Integer} id
+     * @param {number} id
      * @returns {Object} Return an object with user datas (day, sessionLenght)
      */
     async getAverageSessionDuration(id) {
