@@ -8,8 +8,7 @@ import {DailyActivities,
     LoaderSpinner
 } from '../../components';
 import styles from './UserProfil.module.scss';
-import {Redirect, useLocation, useParams} from "react-router-dom";
-import {Api} from "../../services/api";
+import {Redirect, useParams} from "react-router-dom";
 import {service} from "../../services/service";
 import {NotFound} from "../index";
 
@@ -32,8 +31,6 @@ const UserProfil = () => {
     const [dailyKeyCards, setDailyKeyCards] = useState([]);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            (() => {
                 const getUser  =  service.getUser(id);
                 const getPerformance  =  service.getPerformances(id);
                 const getDailyActivity  =  service.getDailyActivities(id);
@@ -42,7 +39,7 @@ const UserProfil = () => {
                 Promise.all([getUser, getPerformance, getDailyActivity, getAverage])
                     .then(([userResult,performanceResult, activityResult, averageResult] ) => {
                         setFirstName(userResult.userInfos.firstName);
-                        setScore(userResult.todayScore);
+                        setScore(userResult.todayScore || userResult.score);
                         setDailyKeyCards(userResult.keyData);
                         setPerformance(performanceResult);
                         setActivity(activityResult);
@@ -52,11 +49,8 @@ const UserProfil = () => {
                     .catch((error) => {
                         console.log(error)
                         setError404(true);
+                        setLoading(false)
                     })
-
-            })();
-        }, 1000);
-        return () => clearTimeout(timer);
     }, []);
 
     return (
