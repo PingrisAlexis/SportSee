@@ -2,26 +2,19 @@
 
 ## Project 12 Front-End OpenClassrooms - Develop an analytics dashboard with React.
 
-### Specifications:
+### Technologies used:
 
-- Technologies used: React, React Router, Recharts, Axios.
+- Yarn v 1.22.17
 
+- NodeJS v 12.18
 
-### Elements provided:
+- ReactJS v 17.0.2
 
-- [Kanban](https://www.notion.so/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)
+- React Router Dom v 5.2.0
 
-- [Mock-up](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
+- Recharts v 2.1.9
 
-### Skills assessed:
-
--Ensure the quality of data in an application.
-
--Interact with a web service.
-
--Develop advanced graphical elements using JavaScript libraries.
-
--Produce technical documentation for an application.
+- Sass v 1.49.9
 
 ### Set up:
 
