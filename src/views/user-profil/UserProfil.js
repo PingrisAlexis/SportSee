@@ -24,26 +24,26 @@ const UserProfil = () => {
     const [loading, setLoading] = useState(true);
     const [error404, setError404] = useState(false);
     const [firstName, setFirstName] = useState([]);
-    const [performance, setPerformance] = useState([]);
-    const [activity, setActivity] = useState([]);
+    const [performances, setPerformances] = useState([]);
+    const [activities, setActivities] = useState([]);
     const [averages, setAverages] = useState([]);
     const [score, setScore] = useState([]);
     const [dailyKeyCards, setDailyKeyCards] = useState([]);
 
     useEffect(() => {
                 const getUser  =  service.getUser(id);
-                const getPerformance  =  service.getPerformances(id);
-                const getDailyActivity  =  service.getDailyActivities(id);
-                const getAverage  =  service.getAverageSessionDuration(id);
+                const getPerformances  =  service.getPerformances(id);
+                const getDailyActivities  =  service.getDailyActivities(id);
+                const getAverages  =  service.getAverageSessionDuration(id);
 
-                Promise.all([getUser, getPerformance, getDailyActivity, getAverage])
-                    .then(([userResult,performanceResult, activityResult, averageResult] ) => {
+                Promise.all([getUser, getPerformances, getDailyActivities, getAverages])
+                    .then(([userResult,performancesResult, activitiesResult, averagesResult] ) => {
                         setFirstName(userResult.userInfos.firstName);
                         setScore(userResult.todayScore || userResult.score);
                         setDailyKeyCards(userResult.keyData);
-                        setPerformance(performanceResult);
-                        setActivity(activityResult);
-                        setAverages(averageResult);
+                        setPerformances(performancesResult);
+                        setActivities(activitiesResult);
+                        setAverages(averagesResult);
                         setLoading(false)
                     })
                     .catch((error) => {
@@ -67,10 +67,10 @@ const UserProfil = () => {
                             <div className={styles.main_container}>
                                 <div className={styles.charts_container}>
 
-                                    <DailyActivities activities={activity}/>
+                                    <DailyActivities activities={activities}/>
                                     <div className={styles.user_profil_bottom_part}>
                                         <AverageSessionDuration averages={averages}/>
-                                        <OverallPerformances performance={performance}/>
+                                        <OverallPerformances performances={performances}/>
                                         <ObjectiveScore score={score}/>
                                     </div>
 
