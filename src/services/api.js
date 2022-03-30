@@ -2,10 +2,7 @@ import axios from 'axios';
 
 /**
  *
- * @param {String} response
- * @param {Number} userId
  * @description Get and transform data to front-end part.
- * @returns Object
  */
 
 export class Api {
@@ -14,7 +11,7 @@ export class Api {
     }
     /**
      * @name  getAverageSessionDuration
-     * @param {Integer} userId
+     * @param {number} userId
      * @returns {Object} Return an object with user datas (day, sessionLenght)
      */
     async getAverageSessionDuration(userId) {
@@ -32,7 +29,7 @@ export class Api {
     }
     /**
      * @name  getDailyActivities
-     * @param {Integer} userId
+     * @param {number} userId
      * @returns {Object} Return an object with user datas (day, kilogram, calories)
      */
     async getDailyActivities(userId) {
@@ -51,7 +48,7 @@ export class Api {
     }
     /**
      * @name  getPerformances
-     * @param {Integer} userId
+     * @param {number} userId
      * @returns {Object} Return an object with user datas (subject, A)
      */
     async getPerformances(userId) {
@@ -69,7 +66,7 @@ export class Api {
     }
     /**
      * @name  getUser
-     * @param {Integer} userId
+     * @param {number} userId
      * @returns {Object} Return an object with user datas (id, userInfos, keyData, todayScore or score)
      */
     async getUser(userId) {
