@@ -38,7 +38,7 @@
 
 #### Front-end:
 
-- Clone the front-end part and install dependencies:
+- Please, open a second terminal and clone the front-end part and install dependencies:
 
 - `git clone https://github.com/PingrisAlexis/PingrisAlexis_12_09032022.git`
 
@@ -46,10 +46,10 @@
 
 - Then, install dependencies : `npm install`
 
-- Terminal will told you that something is already running on port 3000 (backend part),
-and will ask to you if you want to run the app on another port. Just press `Y`. 
+- Now, you can run the front-end server:  `npm start`
 
-- Now, you can run the front-end server (port 3001):  `npm start` 
+- Terminal will told you that something is already running on port 3000 (backend part),
+and will ask to you if you want to run the app on another port. Just press `Y`, and it will run on port 3001.
 
 ### Project:
 
