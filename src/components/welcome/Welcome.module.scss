@@ -1,9 +1,6 @@
 .welcome_container {
   position: absolute;
-  bottom: 65rem;
-  @media screen and (max-width: 1500px) {
-    bottom: 97rem;
-  }
+  top: -15rem;
   h1 {
     font-size: 6rem;
     font-weight: lighter;
