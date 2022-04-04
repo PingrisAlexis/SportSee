@@ -8,6 +8,13 @@
   @media screen and (max-width: 1500px) {
     height: 150vh !important;
   }
+  @media screen and (max-width: 917px) {
+    height: 200vh !important;
+  }
+  @media screen and (max-width: 799px) {
+    height: 280vh !important;
+  }
+
   ul {
     display: flex;
     flex-direction: column;

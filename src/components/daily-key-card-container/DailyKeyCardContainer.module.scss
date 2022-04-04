@@ -3,9 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   @media screen and (max-width: 1500px) {
-    width: 85vw;
+    margin-left: 4rem;
+    width: 100vw;
     flex-flow: row wrap;
     margin-top: 3rem;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 815px) {
+   justify-content: center;
+    margin-left: 2rem;
   }
 }
