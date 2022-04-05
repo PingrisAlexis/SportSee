@@ -11,10 +11,10 @@ function App() {
                 <Header />
                 <VerticalNavbar />
                 <Switch>
-                    <Route path="/" exact>
-                        <Redirect to="/users/12" />
-                    </Route>
-                    <Route exact path="/users/:id"  component={UserProfil}/>
+                    {/*<Route path="/" exact>*/}
+                    {/*    <Redirect to="/users/12" />*/}
+                    {/*</Route>*/}
+                    <Route exact path="/users/12"  component={UserProfil}/>
                     <Route component={NotFound}/>
                     <Route path="*">
                         <Redirect to="/not-found" />
