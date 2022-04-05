@@ -2,6 +2,22 @@
 
 ## Project 12 Front-End OpenClassrooms - Develop an analytics dashboard with React.
 
+### Specifications:
+
+- Technologies used: React, React Router, Recharts
+
+- Breakdown into modular and reusable components
+ 
+- Respect the mock up and charts
+
+### Elements provided:
+
+ - Tools and technical constraints
+
+ - [Mock-up SportSee](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1)
+
+ - [KanBan User Stories](https://www.notion.so/openclassrooms/Copy-of-Dev4U-projet-Learn-Home-6686aa4b5f44417881a4884c9af5669e)
+
 ### Technologies used:
 
 - Yarn v 1.22.17
@@ -55,5 +71,12 @@ and will ask to you if you want to run the app on another port. Just press `Y`, 
 
 - To switch between the two differents users, please, select the adress bar, and go to`http://localhost:3001/users/12` or, `http://localhost:3001/users/18` 
 
+### Skills assessed:
 
-
+ - Ensure the quality of the data in an application
+ 
+ - Interact with a Web service
+  
+ - Develop advanced graphic elements using JavaScript libraries
+  
+ - Produce technical documentation for an application
