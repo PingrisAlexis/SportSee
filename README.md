@@ -69,7 +69,7 @@ and will ask to you if you want to run the app on another port. Just press `Y`, 
 
 ### Project:
 
-- To switch between the two differents users, please, select the adress bar, and go to`http://localhost:3001/users/12` or, `http://localhost:3001/users/18` 
+- To switch between the two differents users, please, select the adress bar, and go to`http://localhost:3001/user/12` or, `http://localhost:3001/user/18` 
 
 ### Skills assessed:
 
