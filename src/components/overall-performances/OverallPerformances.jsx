@@ -28,7 +28,7 @@ const OverallPerformances = ({performances}) => {
                         y: 200,
                     }}
                 />
-                <Radar dataKey="performanceValue" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+                <Radar dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
             </RadarChart>
         </ResponsiveContainer>
     </div>
@@ -38,8 +38,8 @@ const OverallPerformances = ({performances}) => {
 OverallPerformances.propTypes = {
     performances : PropTypes.arrayOf(
         PropTypes.shape({
-            value: PropTypes.number,
-            kind: PropTypes.string,
+            value: PropTypes.number.isRequired,
+            kind: PropTypes.string.isRequired,
         })
     ).isRequired,
 };

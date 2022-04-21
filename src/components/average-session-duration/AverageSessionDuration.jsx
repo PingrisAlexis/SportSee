@@ -70,8 +70,8 @@ const AverageSessionDuration = ({averages}) => {
 AverageSessionDuration.propTypes = {
     averages : PropTypes.arrayOf(
         PropTypes.shape({
-            day: PropTypes.string,
-            sessionLength: PropTypes.number,
+            day: PropTypes.string.isRequired,
+            sessionLength: PropTypes.number.isRequired,
         })
     ).isRequired,
 }

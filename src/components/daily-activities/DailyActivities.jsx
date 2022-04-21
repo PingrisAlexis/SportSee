@@ -105,9 +105,9 @@ const DailyActivities = ({ activities }) => {
 DailyActivities.propTypes = {
     activities : PropTypes.arrayOf(
         PropTypes.shape({
-            day: PropTypes.string,
-            kilogram: PropTypes.number,
-            calories: PropTypes.number,
+            day: PropTypes.string.isRequired,
+            kilogram: PropTypes.number.isRequired,
+            calories: PropTypes.number.isRequired,
         })
     ).isRequired,
 };
