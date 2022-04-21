@@ -276,7 +276,7 @@ export class Mock {
     /**
      * @name  getPerformances
      * @param {number} id
-     * @returns {Object} Return an object with user datas (subject, A)
+     * @returns {Object} Return an object with user datas
      */
     async getPerformances(id) {
         const userPerformance = USER_PERFORMANCE.find(user => user.userId === parseInt(id));
@@ -286,7 +286,7 @@ export class Mock {
 
             return {
                 kind: kindName[index],
-                performanceValue: performance.value
+                value: performance.value
             }
         })
     };
