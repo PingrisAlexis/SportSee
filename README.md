@@ -1,6 +1,6 @@
-# PingrisAlexis_12_09032022
+# Project 7/9 - Front End Developer Path
 
-## Project 12 Front-End OpenClassrooms - Develop an analytics dashboard with React.
+## Develop an analytics dashboard with React.
 
 ### Specifications:
 
